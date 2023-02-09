@@ -1,0 +1,9 @@
+@import url("./vendor/normalize.css");
+@import url("./vendor/fonts/inter.css");
+/* main page styles */
+@import url('./components/Header/Header');
+@import url('./components/Main/Main');
+@import url('./components/Promo/Promo');
+@import url('./components/CommonHeader/CommonHeader');
+@import url('./components/AboutProject/AboutProject');
+@import url('./components/Techs/Techs');

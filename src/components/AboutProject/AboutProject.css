@@ -1,0 +1,81 @@
+.aboutProject {
+  background-color: #FFF;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-top: 100px;
+  border: 1px solid green;
+}
+
+.aboutProject__blocks {
+  margin-top: 70px;
+  margin-bottom: 110px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.aboutProject__block {
+  margin: 0;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutProject__title {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.aboutProject__text {
+  margin-top: 26px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.aboutProject__bars {
+  max-width: 1140px;
+  display: flex;
+  flex-direction: row;
+}
+
+.aboutProject__bar {
+  display: flex;
+  flex-direction: column;
+  width: calc(100%/5);
+  align-items: center;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+}
+
+.aboutProject__bar_long {
+  width: calc((100%/5)*4);
+}
+
+.aboutProject__bar-item {    
+  margin: 0 auto;
+  background-color: #000;
+  color: #FFF;
+  font-weight: 400;
+  height: 36px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutProject__bar-item_light {
+  background-color: #F2F2F2;
+  color: #000;
+}
+
+.aboutProject__bar-name {
+  box-sizing: border-box;
+  margin-top: 14px;
+  margin-bottom: 110px;
+  color: #A0A0A0;
+}

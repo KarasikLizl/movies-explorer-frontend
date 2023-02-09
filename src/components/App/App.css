@@ -1,0 +1,12 @@
+.page {
+  min-height: 100vh;
+  background-color: #FFF;
+  color: #000;
+  border: 1px solid purple;
+  margin: 0 auto;
+}
+
+#root {
+  margin: 0 auto;
+  font-family: "Inter", Arial, sans-serif;    
+}

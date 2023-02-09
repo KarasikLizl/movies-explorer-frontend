@@ -1,0 +1,13 @@
+.commonHeader {
+  margin: 0;
+  border-bottom: 1px solid #000;
+  max-width: 1140px;
+}
+
+.commonHeader__text {
+  font-size: 25px;
+  line-height: 27px;
+  font-weight: 400;
+  margin-bottom: 23px;
+  margin-top: 0;
+}
