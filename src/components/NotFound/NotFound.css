@@ -1,0 +1,57 @@
+.not-found {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.not-found__header {
+  font-size: 140px;
+  line-height: 169px;
+  font-weight: 400;
+  margin-top: 246px;
+  margin-bottom: 5px;
+}
+
+.not-found__text {
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 184px;
+}
+
+.not-found__btn {
+  background-color: inherit;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  border: none;
+  padding: 0;
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+  cursor: pointer;
+}
+
+.not-found__btn:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+  .not-found__header {
+    font-size: 80px;
+    line-height: 97px;
+    margin-top: 329px;
+    margin-bottom: 10px;
+  }
+  .not-found__text {
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 284px;
+  }
+  .not-found__btn {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

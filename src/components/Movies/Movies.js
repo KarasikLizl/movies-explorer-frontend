@@ -1,9 +1,27 @@
 import React from 'react';
+import Header from '../Header/Header';
+import Navigation from '../Navigation/Navigation';
+import SearchForm from '../SearchForm/SearchForm';
+import MoviesCardList from '../MoviesCardList/MoviesCardList';
+import Footer from '../Footer/Footer';
+import { initialCards } from '../../utils/constants';
 
 function Movies() {
   return (
-    <section className='movies'></section>
-  )
-};
+    <div className='movies'>
+      <Header
+        color={'color_inherit'}
+        navigation={<Navigation />}
+        links={'hidden'}
+      />
+      <SearchForm />
+      <MoviesCardList cards={initialCards} />
+      <div className='movies__more-container'>
+        <button className='movies__more'>Еще</button>
+      </div>
+      <Footer />
+    </div>
+  );
+}
 
 export default Movies;

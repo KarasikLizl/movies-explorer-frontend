@@ -4,17 +4,21 @@ import AboutProject from '../AboutProject/AboutProject';
 import Tech from '../Techs/Techs';
 import Portfolio from '../Portfolio/Portfolio';
 import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
+import AboutMe from '../AboutMe/AboutMe';
 
 function Main() {
   return (
     <main className='content'>
-      <Promo></Promo>
-      <AboutProject></AboutProject>
-      <Tech></Tech>
-      <Portfolio></Portfolio>
-      <Footer></Footer>
+      <Header color={'color_pink'} buttonHid={'hidden'} menu={'hidden'} />
+      <Promo />
+      <AboutProject />
+      <Tech />
+      <AboutMe />
+      <Portfolio />
+      <Footer />
     </main>
-  )
-};
+  );
+}
 
 export default Main;
