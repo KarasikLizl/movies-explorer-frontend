@@ -1,7 +1,7 @@
 import Form from '../Form/Form';
 function Login() {
   return (
-    <main>
+    <main className='login'>
       <div className='login-form'>
         <Form
           greeting={'Рады видеть!'}

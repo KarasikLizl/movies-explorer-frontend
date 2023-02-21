@@ -1,4 +1,4 @@
-.profile__container {
+.profile {
   max-width: 410px;
   margin: 70px auto 70px auto;
   display: flex;
@@ -16,14 +16,14 @@
   font-weight: 500;
 }
 
-.pfofile__title {
+.profile__title {
   font-size: 24px;
   line-height: 29px;
   font-weight: 500;
   margin: 0 auto 123px auto;
 }
 
-.pfofile__form-block {
+.profile__form-block {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -79,11 +79,11 @@
 }
 
 @media (max-width: 1024px) {
-  .profile__container {
+  .profile {
     margin-top: 230px;
     margin-bottom: 0;
   }
-  .pfofile__title {
+  .profile__title {
     margin-bottom: 96px;
   }
   .profile__links {
@@ -93,11 +93,11 @@
 }
 
 @media (max-width: 767px) {
-  .profile__container {
+  .profile {
     max-width: 260px;
     margin-top: 65px;
   }
-  .pfofile__title {
+  .profile__title {
     margin-bottom: 80px;
   }
   .profile__links {

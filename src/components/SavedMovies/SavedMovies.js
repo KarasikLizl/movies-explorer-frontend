@@ -13,7 +13,7 @@ function SavedMovies() {
         navigation={<Navigation />}
         links={'hidden'}
       />
-      <main>
+      <main className='movies'>
         <SearchForm />
         <MoviesCardList cards={savedCards} button={'delete'} />
         <button className='movies__more movies__more_hidden'></button>

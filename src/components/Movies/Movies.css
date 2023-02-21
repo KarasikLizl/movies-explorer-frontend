@@ -2,6 +2,11 @@
   margin: 0 auto;
 }
 
+.movies__main {
+  margin: 0 auto;
+  padding: 0;
+}
+
 .movies__more-container {
   margin: 0 auto;
   max-width: 1140px;

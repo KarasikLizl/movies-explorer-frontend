@@ -11,7 +11,7 @@ function Main() {
   return (
     <div className='content'>
       <Header color={'color_pink'} buttonHid={'hidden'} menu={'hidden'} />
-      <main>
+      <main className='main'>
         <Promo />
         <AboutProject />
         <Tech />

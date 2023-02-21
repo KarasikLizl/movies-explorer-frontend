@@ -14,7 +14,7 @@ function Movies() {
         navigation={<Navigation />}
         links={'hidden'}
       />
-      <main>
+      <main className='movies__main'>
         <SearchForm />
         <MoviesCardList cards={initialCards} />
         <div className='movies__more-container'>

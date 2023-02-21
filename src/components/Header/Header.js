@@ -26,17 +26,18 @@ function Header({
             </Link>
           </button>
         </div>
-
+        <div className={`acount acount_${buttonHid}`}>
         <button
-          className={`header__btn header__btn_me header__btn_me_${buttonHid}`}
+          className='acount__btn acount__btn_me'
         >
-          <Link to='/profile' className='header__link header__link-container'>
-            <span className='header__link_span'>Аккаунт</span>
-            <div className='header__link_icon'></div>
+          <Link to='/profile' className='acount__link'>
+            <span className='acount__link-span'>Аккаунт</span>
+            <div className='acount__link-icon'></div>
           </Link>
         </button>
+        </div>
         <button
-          className={`header__link_icon-menu header__link_icon-menu_${hiddenMenu}`}
+          className={`header__link header__link_icon-menu header__link_icon-menu_${hiddenMenu}`}
         ></button>
       </div>
     </header>

@@ -4,17 +4,16 @@ import { Link } from 'react-router-dom';
 
 function Profile({ name, email }) {
   return (
-    <section className='profile'>
+    <section>
       <Header
         color={'color_inherit'}
         navigation={<Navigation />}
         links={'hidden'}
       />
-      <main>
-        <div className='profile__container'>
-          <h2 className='pfofile__title'>Привет, {name}!</h2>
+      <main className='profile'>
+          <h2 className='profile__title'>Привет, {name}!</h2>
           <form name='profile' className='profile__form'>
-            <div className='pfofile__form-block'>
+            <div className='profile__form-block'>
               <p className='profile__form-title'>Имя</p>
               <input
                 placeholder='Имя'
@@ -26,7 +25,7 @@ function Profile({ name, email }) {
               />
             </div>
             <div className='profile__dec'></div>
-            <div className='pfofile__form-block'>
+            <div className='profile__form-block'>
               <p className='profile__form-title'>E-mial</p>
               <input
                 placeholder='E-mail'
@@ -42,11 +41,9 @@ function Profile({ name, email }) {
               </Link>
             </div>
           </form>
-        </div>
       </main>
     </section>
   );
 }
 
 export default Profile;
-

@@ -24,15 +24,17 @@ function Menu() {
             </Link>
           </li>
         </ul>
-        <button className='header__btn header__btn_me header__btn_menu'>
+        <div className='acount'>
+        <button className='acount__btn acount__btn_me acount__btn_menu'>
           <Link
             to='/profile'
-            className='header__link header__link-container header__link_menu'
+            className='acount__link acount__link_menu'
           >
-            <span className='header__link_span'>Аккаунт</span>
-            <div className='header__link_icon'></div>
+            <span className='acount__link-span'>Аккаунт</span>
+            <div className='acount__link-icon'></div>
           </Link>
         </button>
+        </div>
       </div>
     </div>
   );
