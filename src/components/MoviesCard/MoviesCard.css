@@ -83,11 +83,18 @@
   }
   .card__btn {
     margin-right: 14px;
+    margin-left: 0;
   }
 }
 
 @media (max-width: 767px) {
   .card__img {
     height: 168px;
+  }
+  .card__text {
+    max-width: 210px;
+  }
+  .card__btn {
+    margin-left: 32px;
   }
 }
