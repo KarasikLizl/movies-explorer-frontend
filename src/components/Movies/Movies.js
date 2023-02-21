@@ -14,14 +14,17 @@ function Movies() {
         navigation={<Navigation />}
         links={'hidden'}
       />
-      <SearchForm />
-      <MoviesCardList cards={initialCards} />
-      <div className='movies__more-container'>
-        <button className='movies__more'>Еще</button>
-      </div>
+      <main>
+        <SearchForm />
+        <MoviesCardList cards={initialCards} />
+        <div className='movies__more-container'>
+          <button className='movies__more'>Еще</button>
+        </div>
+      </main>
       <Footer />
     </div>
   );
 }
 
 export default Movies;
+

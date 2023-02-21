@@ -13,12 +13,15 @@ function SavedMovies() {
         navigation={<Navigation />}
         links={'hidden'}
       />
-      <SearchForm />
-      <MoviesCardList cards={savedCards} button={'delete'} />
-      <button className='movies__more movies__more_hidden'></button>
+      <main>
+        <SearchForm />
+        <MoviesCardList cards={savedCards} button={'delete'} />
+        <button className='movies__more movies__more_hidden'></button>
+      </main>
       <Footer />
     </div>
   );
 }
 
 export default SavedMovies;
+

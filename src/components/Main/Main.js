@@ -9,16 +9,19 @@ import AboutMe from '../AboutMe/AboutMe';
 
 function Main() {
   return (
-    <main className='content'>
+    <div className='content'>
       <Header color={'color_pink'} buttonHid={'hidden'} menu={'hidden'} />
-      <Promo />
-      <AboutProject />
-      <Tech />
-      <AboutMe />
-      <Portfolio />
+      <main>
+        <Promo />
+        <AboutProject />
+        <Tech />
+        <AboutMe />
+        <Portfolio />
+      </main>
       <Footer />
-    </main>
+    </div>
   );
 }
 
 export default Main;
+
