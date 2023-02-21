@@ -8,7 +8,7 @@ function SearchForm() {
         <form className='form' name='search-form'>
           <button className='form__button' type='submit'></button>
           <div className='form__container'>
-            <input className='form__input' placeholder='Фильм'></input>
+            <input className='form__input' placeholder='Фильм' required></input>
           </div>
         </form>
 
@@ -20,3 +20,4 @@ function SearchForm() {
 }
 
 export default SearchForm;
+
