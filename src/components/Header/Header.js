@@ -20,21 +20,21 @@ function Header({
           <Link to='/signup' className='header__link'>
             Регистрация
           </Link>
-          <button className='header__btn'>
+          <div className='header__btn'>
             <Link to='/signin' className='header__link header__link_solid'>
               Войти
             </Link>
-          </button>
+          </div>
         </div>
         <div className={`acount acount_${buttonHid}`}>
-        <button
+        <div
           className='acount__btn acount__btn_me'
         >
           <Link to='/profile' className='acount__link'>
             <span className='acount__link-span'>Аккаунт</span>
             <div className='acount__link-icon'></div>
           </Link>
-        </button>
+        </div>
         </div>
         <button
           className={`header__link header__link_icon-menu header__link_icon-menu_${hiddenMenu}`}

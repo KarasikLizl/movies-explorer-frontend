@@ -1,7 +1,7 @@
 function FilterCheckbox() {
   return (
     <div className='checkbox'>
-      <label htmlFor='checkbox__button' className='checkbox__text'>
+      <label htmlFor='checkbox__toggle' className='checkbox__text'>
         Короткометражки
       </label>
       <input

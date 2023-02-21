@@ -5,8 +5,8 @@ import { staticSite, adaptiveSite, spa } from '../../utils/constants';
 function Portfolio() {
   return (
     <section className='portfolio'>
+      <h4 className='portfolio__list-title'>Портфолио</h4>
       <ul className='portfolio__list'>
-        <h4 className='portfolio__list-title'>Портфолио</h4>
         <li className='portfolio__item'>
           <a
             className='portfolio__item-link'

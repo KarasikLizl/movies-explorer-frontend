@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Profile({ name, email }) {
   return (
-    <section>
+    <div>
       <Header
         color={'color_inherit'}
         navigation={<Navigation />}
@@ -42,7 +42,7 @@ function Profile({ name, email }) {
             </div>
           </form>
       </main>
-    </section>
+    </div>
   );
 }
 
