@@ -1,0 +1,129 @@
+.about {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 110px 70px 0 70px;
+}
+
+.about__main {
+  max-width: 1140px;
+  margin-top: 66px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.about__text {
+  margin: 0;
+  max-width: 600px;
+}
+
+.about__title {
+  font-size: 50px;
+  line-height: 58px;
+  font-weight: 400;
+  margin: 0px;
+}
+
+.about__subtitle {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 500;
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
+.about__about {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  margin-top: 26px;
+  margin-bottom: 99px;
+}
+
+.about__photo {
+  border-radius: 10px;
+  width: 270px;
+  height: 327px;
+}
+
+.about__link {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+  color: #000;
+  transition: opacity 0.2s ease-in;
+  cursor: pointer;
+}
+
+.about__link:hover {
+  opacity: 0.7;
+}
+
+.about__link:focus {
+  outline: none;
+  border: none;
+}
+
+@media (max-width: 1025px) {
+  .about {
+    padding: 90px 50px 0 50px;
+  }
+  .about__title {
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -0.04em;
+  }
+  .about__subtitle {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    margin-top: 16px;
+  }
+  .about__about {
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 20px;
+    margin-bottom: 87px;
+  }
+  .about__photo {
+    width: 255px;
+    height: 307px;
+  }
+  .about__text {
+    max-width: 364px;
+  }
+}
+
+@media (max-width: 767px) {
+  .about {
+    padding: 70px 14px 0 14px;
+  }
+  .about__main {
+    margin-top: 60px;
+    flex-direction: column-reverse;
+  }
+  .about__photo {
+    width: 292px;
+    height: 352px;
+  }
+  .about__text {
+    margin-top: 40px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+  .about__subtitle {
+    font-size: 11px;
+    line-height: 16px;
+    margin-top: 20px;
+  }
+  .about__about {
+    font-size: 11px;
+    line-height: 16px;
+    margin-bottom: 25px;
+  }
+  .about__title {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}

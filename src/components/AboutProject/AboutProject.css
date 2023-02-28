@@ -1,0 +1,140 @@
+.aboutProject {
+  background-color: #fff;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 110px 70px 0 70px;
+}
+
+.aboutProject__blocks {
+  margin-top: 70px;
+  margin-bottom: 110px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.aboutProject__block {
+  margin: 0;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutProject__title {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: -0.04em;
+}
+
+.aboutProject__text {
+  margin-top: 26px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.aboutProject__bars {
+  max-width: 1140px;
+  display: flex;
+  flex-direction: row;
+}
+
+.aboutProject__bar {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 5);
+  align-items: center;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+}
+
+.aboutProject__bar_long {
+  width: calc((100% / 5) * 4);
+}
+
+.aboutProject__bar-item {
+  margin: 0 auto;
+  background-color: #000;
+  color: #fff;
+  font-weight: 400;
+  height: 36px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutProject__bar-item_light {
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+.aboutProject__bar-name {
+  box-sizing: border-box;
+  margin-top: 14px;
+  margin-bottom: 110px;
+  color: #a0a0a0;
+}
+
+@media (max-width: 1025px) {
+  .aboutProject {
+    margin: 0 auto;
+    padding: 90px 50px 0 50px;
+  }
+  .aboutProject__blocks {
+    margin-bottom: 93px;
+  }
+  .aboutProject__block {
+    max-width: 319px;
+  }
+  .aboutProject__text {
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 22px;
+  }
+  .aboutProject__bar-name {
+    margin-bottom: 90px;
+  }
+}
+
+@media (max-width: 767px) {
+  .aboutProject {
+    margin: 0 auto;
+    padding: 70px 18px 0 18px;
+  }
+  .aboutProject__blocks {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    flex-direction: column;
+  }
+  .aboutProject__text {
+    margin-top: 16px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+  .aboutProject__block:last-child {
+    margin-top: 56px;
+  }
+  .aboutProject__bar {
+    width: calc(35%);
+    align-items: center;
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: 500;
+  }
+  .aboutProject__bar_long {
+    width: calc(65%);
+  }
+  .aboutProject__bar-name {
+    margin-bottom: 70px;
+    margin-top: 10px;
+  }
+  .aboutProject__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

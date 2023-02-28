@@ -1,0 +1,35 @@
+@import url("./vendor/normalize.css");
+@import url("./vendor/fonts/inter.css");
+/* header styles */
+@import url('./components/Menu/Menu');
+@import url('./components/Header/Header');
+/* main page styles */
+@import url('./components/Main/Main');
+@import url('./components/Promo/Promo');
+@import url('./components/CommonHeader/CommonHeader');
+@import url('./components/AboutProject/AboutProject');
+@import url('./components/Techs/Techs');
+@import url('./components/AboutMe/AboutMe');
+@import url('./components/Portfolio/Portfolio');
+/* movies page styles */
+@import url('./components/Movies/Movies');
+/* navigation styles */
+@import url('./components/Navigation/Navigation');
+/* search form styles */
+@import url('./components/SearchForm/SearchForm');
+@import url('./components/FilterCheckbox/FilterCheckbox');
+/* cards styles */
+@import url('./components/MoviesCardList/MoviesCardList');
+@import url('./components/MoviesCard/MoviesCard');
+/* saved movies styles */
+@import url('./components/SavedMovies/SavedMovies');
+/* profile styles */
+@import url('./components/Profile/Profile');
+/* form styles */
+@import url('./components/Form/Form');
+/* footer styles */
+@import url('./components/Footer/Footer');
+/* not found styles */
+@import url('./components/NotFound/NotFound');
+/* preloader styles */
+@import url('./components/Preloader/Preloader');

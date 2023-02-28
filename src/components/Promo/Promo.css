@@ -1,0 +1,121 @@
+.promo {
+  background-color: #f3c1f8;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.promo__info {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 70px 0 70px;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.promo__block {
+  margin-top: 75px;
+}
+
+.promo__title {
+  font-size: 50px;
+  line-height: 58px;
+  font-weight: 400;
+  max-width: 640px;
+  margin: 0;
+}
+
+.promo__subtitle {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  margin-top: 36px;
+  margin-bottom: 0;
+  max-width: 310px;
+  opacity: 0.5;
+}
+
+.promo__img {
+  width: 310px;
+  height: 304px;
+  margin-top: 75px;
+}
+
+.promo__btn {
+  width: 129px;
+  height: 36px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  color: #000;
+  border-radius: 3px;
+  background: transparent;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  margin-top: 146px;
+  margin-bottom: 75px;
+  padding: 0;
+  transition: background-color 0.2s ease-in;
+  cursor: pointer;
+}
+
+.promo__btn:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1025px) {
+  .promo__info {
+    padding: 140px 30px 0 30px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .promo__title {
+    font-size: 40px;
+    line-height: 50px;
+    max-width: 680px;
+  }
+  .promo__img {
+    margin-top: 0px;
+  }
+  .promo__block {
+    margin-top: 48px;
+    text-align: center;
+  }
+  .promo__subtitle {
+    margin: 22px auto 0 auto;
+    max-width: 260px;
+  }
+  .promo__btn {
+    margin-top: 89px;
+    margin-bottom: 76px;
+  }
+}
+
+@media (max-width: 767px) {
+  .promo__img {
+    width: 210px;
+    height: 206px;
+  }
+  .promo__info {
+    padding: 65px 10px 0 10px;
+  }
+  .promo__block {
+    margin-top: 44px;
+  }
+  .promo__title {
+    font-size: 30px;
+    line-height: 38px;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+  }
+  .promo__subtitle {
+    margin: 24px auto 0 auto;
+  }
+  .promo__btn {
+    margin-top: 80px;
+    margin-bottom: 30px;
+  }
+}

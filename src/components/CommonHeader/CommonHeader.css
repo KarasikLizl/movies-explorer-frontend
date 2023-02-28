@@ -1,0 +1,32 @@
+.commonHeader {
+  margin: 0;
+  border-bottom: 1px solid #000;
+  max-width: 1140px;
+}
+
+.commonHeader_grey {
+  border-bottom: 1px solid rgba(170, 170, 170, 0.2);
+}
+
+.commonHeader__text {
+  color: #000;
+  font-size: 22px;
+  line-height: 27px;
+  font-weight: 400;
+  margin-bottom: 23px;
+  margin-top: 0;
+  letter-spacing: -0.04em;
+}
+
+@media (max-width: 1025px) {
+  .commonHeader__text {
+    font-size: 22px;
+  }
+}
+@media (max-width: 767px) {
+  .commonHeader__text {
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 28px;
+  }
+}
