@@ -1,18 +1,16 @@
-import Header from '../Header/Header';
-import Navigation from '../Navigation/Navigation';
 import { Link } from 'react-router-dom';
 import CurrentUserContext from '../../contexts/CurrentUserContext';
 import { useEffect, useContext, useState } from 'react';
 
 function Profile({ onLogout, onSubmit }) {
   const currentUser = useContext(CurrentUserContext);
-  const [userEmail, setUserEmail] = useState(currentUser.email);
-  const [userName, setUserName] = useState(currentUser.name);
+  const [userEmail, setUserEmail] = useState('');
+  const [userName, setUserName] = useState('');
 
-  function handleChangeEmail(event) {
+  function onChangeEmail(event) {
     setUserEmail(event.target.value);
   }
-  function handleChangeName(event) {
+  function onChangeName(event) {
     setUserName(event.target.value);
   }
   function handleSubmit(event) {
@@ -22,14 +20,13 @@ function Profile({ onLogout, onSubmit }) {
       email: userEmail,
     });
   }
+  useEffect(() => {
+    setUserEmail(currentUser.email);
+    setUserName(currentUser.name);
+  }, [currentUser]);
 
   return (
     <div>
-      <Header
-        color={'color_inherit'}
-        navigation={<Navigation />}
-        links={'hidden'}
-      />
       <main className='profile'>
         <h2 className='profile__title'>Привет, {currentUser.name}!</h2>
         <form name='profile' className='profile__form' onSubmit={handleSubmit}>
@@ -38,11 +35,11 @@ function Profile({ onLogout, onSubmit }) {
             <input
               placeholder='Имя'
               className='profile__form-input'
-              value={currentUser.name}
+              defaultValue={currentUser.name || ''}
               type='text'
               minLength={2}
               maxLength={40}
-              onChange={handleChangeName}
+              onChange={onChangeName}
             />
           </div>
           <div className='profile__dec'></div>
@@ -51,13 +48,13 @@ function Profile({ onLogout, onSubmit }) {
             <input
               placeholder='E-mail'
               className='profile__form-input'
-              value={currentUser.email}
+              value={currentUser.email || ''}
               type='text'
-              onChange={handleChangeEmail}
+              onChange={onChangeEmail}
             />
           </div>
           <div className='profile__links'>
-            <p className='profile__btn'>Редактировать</p>
+            <button className='profile__btn' type='submit'>Редактировать</button>
             <Link
               to='/signin'
               className='profile__btn profile__btn_red'

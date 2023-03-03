@@ -17,8 +17,10 @@ import {
   saveMovie,
   deleteMovie,
   getUserInfo,
+  editUserInfo,
 } from '../../utils/MainApi';
 import api from '../../utils/MoviesApi';
+import Header from '../Header/Header';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -97,9 +99,9 @@ function App() {
       })
       .catch((err) => {
         console.log(`Ошибка ${err}`);
-        navigate('/signin', { replace: true });
+        // navigate('/signup', { replace: true });
       });
-  }, [navigate, token]);
+  }, [token]);
 
   useEffect(() => {
     onCheckToken();
@@ -117,10 +119,24 @@ function App() {
     setCurrentUser(null);
   };
 
+  const handleUpdateUser = (userInfo) => {
+    editUserInfo(userInfo)
+      .then((res) => {
+        setCurrentUser(res);
+        console.log(currentUser.name)
+      })
+      .catch((err) => {
+        // console.log(`Ошибка ${err}`);
+        console.log(err)
+      });
+  }
+
   return (
     <div className='page'>
       <CurrentUserContext.Provider value={currentUser}>
+      <Header loggedIn={loggedIn}></Header>
         <Routes>
+          
           <Route path='signup' element={<Register onSignUp={onSignUp} />} />
           <Route path='signin' element={<Login onSignIn={onSignIn} />} />
           <Route path='/' element={<Main />} />
@@ -132,9 +148,8 @@ function App() {
             element={
               <ProtectedRoute loggedIn={loggedIn}>
                 <Profile
-                  name={'Елизавета'}
-                  email={'pochta@yandex.ru'}
                   onLogout={handleOnLogout}
+                  onSubmit={handleUpdateUser}
                 />
               </ProtectedRoute>
             }

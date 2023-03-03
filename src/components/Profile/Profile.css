@@ -66,6 +66,8 @@
   opacity: 1;
   transition: opacity 0.2s ease-in;
   cursor: pointer;
+  border: none;
+  background-color: inherit;
 }
 
 .profile__btn_red {

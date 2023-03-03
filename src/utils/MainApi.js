@@ -1,5 +1,5 @@
-// const BASE_URL = 'https://api.bestfilmsever.nomoredomainsclub.ru';
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://api.bestfilmsever.nomoredomainsclub.ru';
+// const BASE_URL = 'http://localhost:3000';
 
 export async function getSavedMovies() {
   const res = await fetch(`${BASE_URL}/movies`, {
@@ -68,12 +68,12 @@ export async function editUserInfo(data) {
     headers: {
       authorization: `Bearer ${localStorage.getItem('token')}`,
       'Content-Type': 'application/json',
-      Accept: 'application/json',
+      
     },
-    body: {
+    body: JSON.stringify({
       name: data.name,
       email: data.email,
-    },
+    }),
   });
   return _checkResponse(res);
 }

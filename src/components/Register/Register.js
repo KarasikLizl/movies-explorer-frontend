@@ -19,17 +19,14 @@ function Register({onSignUp}) {
 
   function handleEmailChange(event) {
     setEmail(event.target.value);
-    console.log(event.target.value)
   }
 
   function handlePasswordChange(event) {
     setPassword(event.target.value);
-    console.log(event.target.value);
   }
 
   function handleNameChange(event) {
     setName(event.target.value);
-    console.log(event.target.value)
   }
 
   return (
