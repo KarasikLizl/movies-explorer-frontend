@@ -1,6 +1,6 @@
 class Api {
-  constructor(options) {
-    this._baseUrl = options.baseUrl;
+  constructor(url) {
+    this._baseUrl = url;
   }
 
   _checkError(res) {
@@ -9,18 +9,17 @@ class Api {
     } else return Promise.reject(`Ошибка: ${res.status}`);
   }
 
-  getMovieCards() {
-    return fetch(`${this._baseUrl}/movies`, {
+  getMovieList() {
+    return fetch(`${this._baseUrl}`, {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
+        Accept: 'application/json',
       },
     });
   }
 }
 
-const api = new Api({
-  baseUrl: 'https://api.nomoreparties.co/beatfilm-movies',
-});
+const api = new Api('https://api.nomoreparties.co/beatfilm-movies');
 
 export default api;

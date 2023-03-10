@@ -28,6 +28,11 @@
   margin: 10px auto 80px auto;
 }
 
+.movies__more:focus {
+  outline: none;
+  border: none;
+}
+
 .movies__more:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }

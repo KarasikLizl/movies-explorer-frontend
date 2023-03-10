@@ -68,7 +68,7 @@ export async function editUserInfo(data) {
     headers: {
       authorization: `Bearer ${localStorage.getItem('token')}`,
       'Content-Type': 'application/json',
-      
+      Accept: 'application/json',
     },
     body: JSON.stringify({
       name: data.name,

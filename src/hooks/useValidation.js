@@ -1,24 +1,13 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useEffect } from 'react';
+import { emailRegExp, nameRegEx } from '../utils/constants';
 
-//хук управления формой
-export function useForm() {
-  const [values, setValues] = useState({});
-
-  const handleChange = (event) => {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
-    setValues({ ...values, [name]: value });
-  };
-
-  return { values, handleChange, setValues };
-}
-
-//хук управления формой и валидации формы
-export function useFormWithValidation() {
+export const useFormValidation = () => {
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
   const [isValid, setIsValid] = useState(false);
+  const [targetValue, setTargetValue] = useState('');
+  const [isValidName, setIsValidName] = useState(false);
+  const [isValidPassword, setIsValidPassword] = useState(false);
 
   const handleChange = (event) => {
     const target = event.target;
@@ -26,8 +15,25 @@ export function useFormWithValidation() {
     const value = target.value;
     setValues({ ...values, [name]: value });
     setErrors({ ...errors, [name]: target.validationMessage });
-    setIsValid(target.closest('form').checkValidity());
+    setTargetValue(target);
   };
+
+  const validateEmail = (email) => {
+    return String(email).toLowerCase().match(emailRegExp);
+  };
+  const validateName = (n) => {
+    return String(n).match(nameRegEx);
+  };
+
+  useEffect(() => {
+    setIsValid(Boolean(values.email && validateEmail(values.email)));
+    setIsValidName(
+      Boolean(values.name) &&
+        validateName(values.name) &&
+        targetValue.checkValidity()
+    );
+    setIsValidPassword(Boolean(values.password));
+  }, [values, targetValue]);
 
   const resetForm = useCallback(
     (newValues = {}, newErrors = {}, newIsValid = false) => {
@@ -38,5 +44,13 @@ export function useFormWithValidation() {
     [setValues, setErrors, setIsValid]
   );
 
-  return { values, handleChange, errors, isValid, resetForm };
-}
+  return {
+    values,
+    handleChange,
+    errors,
+    isValid,
+    resetForm,
+    isValidName,
+    isValidPassword,
+  };
+};
