@@ -57,7 +57,7 @@ function App() {
           setToken(res.token);
           setInfoToolTipOpened({
             opened: true,
-            text: 'Авторизация прошла успешшно!',
+            text: 'Авторизация прошла успешно!',
             statusImage: imgDone,
           });
           navigate('/movies');
@@ -83,11 +83,6 @@ function App() {
           setLoggedIn(true);
           console.log(res);
           onSignIn(email, password);
-          setInfoToolTipOpened({
-            opened: true,
-            text: 'Вы успешно зарегистрировались!',
-            statusImage: imgDone,
-          });
           navigate('/movies');
         } else {
           throw new Error('Что-то пошло не так');
