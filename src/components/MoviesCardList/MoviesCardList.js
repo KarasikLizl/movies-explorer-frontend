@@ -27,15 +27,13 @@ function MoviesCardList({
         })}
       </ul>
       <div className='movies__more-container'>
-        {cards.length === 0 ? (
-          <p>Введите название фильма</p>
-        ) : (
-          cards.length > listLength && (
-            <button onClick={() => moreMovies()} className='movies__more'>
-              Еще
-            </button>
-          )
-        )}
+        {cards.length === 0
+          ? ''
+          : cards.length > listLength && (
+              <button onClick={() => moreMovies()} className='movies__more'>
+                Еще
+              </button>
+            )}
       </div>
     </section>
   );

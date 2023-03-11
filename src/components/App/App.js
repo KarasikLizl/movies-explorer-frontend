@@ -136,8 +136,9 @@ function App() {
     localStorage.removeItem('token');
     setToken('');
     setTimeout(() => {
-      navigate('/');
-    }, 1000);
+    navigate('/');
+    }, 0)
+    
     setCurrentUser(null);
   }
 

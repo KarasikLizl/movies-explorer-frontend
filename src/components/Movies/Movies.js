@@ -31,8 +31,7 @@ function Movies({
           onDelete={onDelete}
           currentUser={currentUser}
           moreMovies={moreMovies}
-        />
-        
+        />        
       </main>
       <Footer />
     </div>
