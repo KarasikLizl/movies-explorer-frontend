@@ -10,18 +10,19 @@ function Profile({ onLogout, onSubmit }) {
   const [userName, setUserName] = useState('');
   const [disableEmailChanges, setDisableEmailChanges] = useState(true);
   const [disableNameChanges, setDisableNameChanges] = useState(true);
+  const [disable, setDisable] = useState(true);
 
   function onChangeEmail(event) {
     handleChange(event);
     setUserEmail(event.target.value);
-    userEmail === event.target.value
+    currentUser.email === event.target.value
       ? setDisableEmailChanges(true)
       : setDisableEmailChanges(false);
   }
   function onChangeName(event) {
     handleChange(event);
     setUserName(event.target.value);
-    userName === event.target.value
+    currentUser.name === event.target.value
       ? setDisableNameChanges(true)
       : setDisableNameChanges(false);
   }
@@ -38,6 +39,14 @@ function Profile({ onLogout, onSubmit }) {
     setUserEmail(currentUser.email);
     setUserName(currentUser.name);
   }, [currentUser]);
+
+  useEffect(() => {
+    if ((userName !== currentUser.name || userEmail !== currentUser.email) || !disableNameChanges || !disableEmailChanges) {
+      setDisable(false)
+    } else {
+      setDisable(true)
+    }
+  }, [currentUser.email, currentUser.name, disableEmailChanges, disableNameChanges, userEmail, userName])
 
   return (
     <div>
@@ -73,7 +82,7 @@ function Profile({ onLogout, onSubmit }) {
             <button
               className='profile__btn'
               type='submit'
-              disabled={!isValid || (disableNameChanges && disableEmailChanges)}
+              disabled={!isValid || disable}
             >
               Редактировать
             </button>
