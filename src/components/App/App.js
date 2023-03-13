@@ -142,6 +142,11 @@ function App() {
     editUserInfo(userInfo)
       .then((res) => {
         setCurrentUser(res);
+        setInfoToolTipOpened({
+          opened: true,
+          text: 'Данные успешно изменены',
+          statusImage: imgDone,
+        });
       })
       .catch((err) => {
         console.log(err);
