@@ -258,9 +258,8 @@ function App() {
     localStorage.setItem('savedFilterMovie', JSON.stringify(sortedMovieSearch));
     setSavedMoviesFilter(
       sortedMovieSearch.length === 0 ? localSavedItems : sortedMovieSearch
-    );
+    );    
   }
-
   //Показ фильмов на странице в зависимости от количества
   function useScreenSize() {
     const getScreenSize = () => {
@@ -414,7 +413,7 @@ function App() {
                   onDelete={handleDeleteMovie}
                   savedMovieList={savedMoviesFilter}
                   filterShort={switchShortSaved}
-                  checkedForm={checked}
+                  checkedForm={checkedSaved}
                   moreMovies={moreMovies}
                   listLength={listLength}
                 />
