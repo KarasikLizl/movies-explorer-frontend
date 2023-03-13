@@ -1,0 +1,88 @@
+.popup {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease-in;
+  z-index: 3;
+}
+
+.popup_is-opened {
+  display: flex;
+}
+
+.popup__container {
+  margin: 0 auto;
+  padding: 0;
+  width: 410px;
+  height: 250px;
+  background: #fff;
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup__image {
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  margin: 30px auto 25px auto;
+}
+
+.popup__close-button {
+  background-image: url('../../images/Group.svg');
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(0, 0, 0, 0);
+  background-position: center;
+  background-repeat: no-repeat;
+  rotate: 45deg;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
+
+.popup__close-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.popup__text {
+  max-width: 300px;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .popup__container {
+    min-height: 300px;
+    width: 260px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .popup__image {
+    width: 80px;
+    height: 80px;
+    padding: 0;
+    margin: 50px auto 50px auto;
+  }
+  .popup__text {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}

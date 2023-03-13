@@ -33,3 +33,6 @@
 @import url('./components/NotFound/NotFound');
 /* preloader styles */
 @import url('./components/Preloader/Preloader');
+/* infotooltip styles */
+@import url('./components/InfoToolTip/InfoToolTip');
+

@@ -1,21 +1,34 @@
-import Header from '../Header/Header';
-import Navigation from '../Navigation/Navigation';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Footer from '../Footer/Footer';
-import { savedCards } from '../../utils/constants';
 
-function SavedMovies() {
+function SavedMovies({
+  handleSearch,
+  cards,
+  onDelete,
+  onSave,
+  savedMovieList,
+  filterShort,
+  checkedForm,
+  listLength,
+  moreMovies,
+}) {
   return (
     <div className='savedMovies'>
-      <Header
-        color={'color_inherit'}
-        navigation={<Navigation />}
-        links={'hidden'}
-      />
       <main className='movies'>
-        <SearchForm />
-        <MoviesCardList cards={savedCards} button={'delete'} />
+        <SearchForm
+          handleSearch={handleSearch}
+          filterShort={filterShort}
+          checkedForm={checkedForm}
+        />
+        <MoviesCardList
+          cards={cards}
+          onDelete={onDelete}
+          onSave={onSave}
+          savedMovieList={savedMovieList}
+          moreMovies={moreMovies}
+          listLength={listLength}
+        />
         <button className='movies__more movies__more_hidden'></button>
       </main>
       <Footer />
@@ -24,4 +37,3 @@ function SavedMovies() {
 }
 
 export default SavedMovies;
-

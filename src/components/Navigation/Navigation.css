@@ -15,6 +15,11 @@
   cursor: pointer;
 }
 
+.navigation__link:focus {
+  outline: none;
+  border: none;
+}
+
 .navigation__link_bold {
   font-weight: 500;
 }
