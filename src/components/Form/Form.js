@@ -9,7 +9,9 @@ function Form({ greeting, text, link, textLine, onSubmit, children }) {
 
   return (
     <div className='main-form'>
+      <Link to='/'>
       <img className='main-form__logo' alt='Лого' src={logo} />
+      </Link>
       <h2 className='main-form__title'>{greeting}</h2>
       <form className='main-form__container' onSubmit={handleSubmit}>
         {children}
