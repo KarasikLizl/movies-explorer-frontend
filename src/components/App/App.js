@@ -129,6 +129,11 @@ function App() {
   function handleOnLogout() {
     setLoggedIn(false);
     localStorage.removeItem('token');
+    localStorage.removeItem('movies');
+
+    localStorage.removeItem('savedMovies');    
+    localStorage.removeItem('saveSearchValue');
+    localStorage.removeItem('saveCheckMovie');
     setToken('');
     setTimeout(() => {
     navigate('/');
@@ -186,7 +191,7 @@ function App() {
           }, 1000);
         });
     }
-  }, [loggedIn]);
+  }, [currentUser, loggedIn]);
 
   // Загрузка сохранненых фильмов
   useEffect(() => {
@@ -304,12 +309,16 @@ function App() {
   function switchShort() {
     const filteredMovies = JSON.parse(localStorage.getItem('filteredMovies'));
     setChecked(!checked);
+    
     if (!checked) {
       const shortMovie = filteredMovies.filter((item) => item.duration <= 40);
       setFilteredMovies(shortMovie);
+      localStorage.setItem('shortMovies', JSON.stringify(shortMovie));
+      localStorage.setItem('saveCheckMovie', true);
     } else {
       setFilteredMovies(filteredMovies);
     }
+    
   }
 
   // Фильтр избранных короткометражек
@@ -320,7 +329,7 @@ function App() {
       const shortMovie = savedFilteredMovies.filter(
         (item) => item.duration <= 40
       );
-      setSavedMoviesFilter(shortMovie);
+      setSavedMoviesFilter(shortMovie);      
     } else {
       setSavedMoviesFilter(savedFilteredMovies);
     }
