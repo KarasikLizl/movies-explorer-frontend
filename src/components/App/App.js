@@ -36,8 +36,6 @@ function App() {
   const [localSavedItems, setLocalSavedItems] = useState([]);
   const [savedMoviesFilter, setSavedMoviesFilter] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
-  const [checked, setChecked] = useState(false);
-  const [checkedSaved, setCheckedSaved] = useState(false);
   const [isInfoToolTipOpened, setInfoToolTipOpened] = useState({
     opened: false,
     text: '',
@@ -130,7 +128,6 @@ function App() {
     setLoggedIn(false);
     localStorage.removeItem('token');
     localStorage.removeItem('movies');
-
     localStorage.removeItem('savedMovies');    
     localStorage.removeItem('saveSearchValue');
     localStorage.removeItem('saveCheckMovie');
@@ -306,26 +303,21 @@ function App() {
   }
 
   // Фильтр короткометражек
-  function switchShort() {
-    const filteredMovies = JSON.parse(localStorage.getItem('filteredMovies'));
-    setChecked(!checked);
-    
-    if (!checked) {
+  function switchShort(checked) {
+    const filteredMovies = JSON.parse(localStorage.getItem('filteredMovies')); 
+    if (checked) {
       const shortMovie = filteredMovies.filter((item) => item.duration <= 40);
       setFilteredMovies(shortMovie);
-      localStorage.setItem('shortMovies', JSON.stringify(shortMovie));
-      localStorage.setItem('saveCheckMovie', true);
+      localStorage.setItem('shortMovies', JSON.stringify(shortMovie));     
     } else {
       setFilteredMovies(filteredMovies);
-    }
-    
+    }    
   }
 
   // Фильтр избранных короткометражек
-  function switchShortSaved() {
+  function switchShortSaved(checked) {
     const savedFilteredMovies = JSON.parse(localStorage.getItem('savedFilterMovie'));
-    setCheckedSaved(!checkedSaved);
-    if (!checkedSaved) {
+    if (checked) {
       const shortMovie = savedFilteredMovies.filter(
         (item) => item.duration <= 40
       );
@@ -382,7 +374,6 @@ function App() {
           <Route path='*' element={<NotFound />} />
 
           <Route
-            exact
             path='/profile'
             element={
               <ProtectedRoute loggedIn={loggedIn}>
@@ -394,7 +385,6 @@ function App() {
             }
           />
           <Route
-            exact
             path='/movies'
             element={
               <ProtectedRoute loggedIn={loggedIn}>
@@ -407,7 +397,6 @@ function App() {
                   onSave={handleSaveMovie}
                   onDelete={handleDeleteMovie}
                   filterShort={switchShort}
-                  checkedForm={checked}
                   moreMovies={moreMovies}
                   listLength={listLength}
                 />
@@ -416,7 +405,6 @@ function App() {
           />
 
           <Route
-            exact
             path='/saved-movies'
             element={
               <ProtectedRoute loggedIn={loggedIn}>
@@ -427,7 +415,6 @@ function App() {
                   onDelete={handleDeleteMovie}
                   savedMovieList={savedMoviesFilter}
                   filterShort={switchShortSaved}
-                  checkedForm={checkedSaved}
                   moreMovies={moreMovies}
                   listLength={listLength}
                 />

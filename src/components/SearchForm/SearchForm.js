@@ -3,32 +3,40 @@ import CommonHeader from '../CommonHeader/CommonHeader';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-function SearchForm({ handleSearch, filterShort, checkedForm }) {
+function SearchForm({ handleSearch, filterShort }) {
   const localStorageValue = localStorage.getItem('saveSearchValue');
+  const localChecked = JSON.parse(localStorage.getItem('saveCheckMovie'));
   const location = useLocation();
 
   const [value, setValue] = useState(localStorageValue ?? '');
+  const [checked, setChecked] = useState(localChecked);
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
     handleSearch(value);
+    setChecked(false);
   };
-
-  useEffect(() => {
-    if (location.pathname === '/saved-movies') {
-      handleSearch(value);
-      setValue('');
-    }
-  }, [location]);
 
   useEffect(() => {
     if (location.pathname === '/movies') {
       localStorage.setItem('saveSearchValue', value);
+      localStorage.setItem('saveCheckMovie', checked);
+      handleSearch(localStorageValue ?? '');
+      filterShort(checked);
+    } else if (location.pathname === '/saved-movies') {
+      filterShort(checked);
+      handleSearch(value);
+      setValue('');
+      setChecked(false);
     }
-  }, [value]);
-  
+  }, [value, checked, location]);
+
   function setValues(event) {
-    setValue(event.target.value)
+    setValue(event.target.value);
+  }
+
+  function setCheck() {
+    setChecked(!checked);
   }
 
   return (
@@ -50,7 +58,7 @@ function SearchForm({ handleSearch, filterShort, checkedForm }) {
             ></input>
           </div>
         </form>
-        <FilterCheckbox filterShort={filterShort} checkedForm={checkedForm} />
+        <FilterCheckbox filterShort={setCheck} checkedForm={checked} />
       </div>
       <CommonHeader text={''} color={'grey'} />
     </section>
