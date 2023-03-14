@@ -21,15 +21,19 @@ function SearchForm({ handleSearch, filterShort }) {
     if (location.pathname === '/movies') {
       localStorage.setItem('saveSearchValue', value);
       localStorage.setItem('saveCheckMovie', checked);
-      handleSearch(localStorageValue ?? '');
-      filterShort(checked);
     } else if (location.pathname === '/saved-movies') {
       filterShort(checked);
-      handleSearch(value);
       setValue('');
       setChecked(false);
     }
   }, [value, checked, location]);
+
+  useEffect(()=> {
+    if (location.pathname === '/movies') {
+      handleSearch(localStorageValue ?? '');
+      filterShort(checked);
+    }
+  }, [location, checked])
 
   function setValues(event) {
     setValue(event.target.value);
