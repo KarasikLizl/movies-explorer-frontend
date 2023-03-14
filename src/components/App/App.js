@@ -128,7 +128,9 @@ function App() {
     setLoggedIn(false);
     localStorage.removeItem('token');
     localStorage.removeItem('movies');
-    localStorage.removeItem('savedMovies');    
+    localStorage.removeItem('savedMovies');
+    localStorage.removeItem('filteredMovies');
+    localStorage.removeItem('savedFilterMovie');
     localStorage.removeItem('saveSearchValue');
     localStorage.removeItem('saveCheckMovie');
     setToken('');
@@ -188,7 +190,7 @@ function App() {
           }, 1000);
         });
     }
-  }, [currentUser, loggedIn]);
+  }, [loggedIn]);
 
   // Загрузка сохранненых фильмов
   useEffect(() => {
