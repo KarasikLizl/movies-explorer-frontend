@@ -18,13 +18,23 @@ function SearchForm({ handleSearch, filterShort }) {
   };
 
   useEffect(() => {
+    if (location.pathname === '/saved-movies') {
+      handleSearch(value);
+      setValue('');
+      setChecked(false);
+    }
+  }, [location]);
+
+  useEffect(() => {
+    if (location.pathname === '/saved-movies') {
+      filterShort(checked);
+    }
+  }, [location, checked]);
+
+  useEffect(() => {
     if (location.pathname === '/movies') {
       localStorage.setItem('saveSearchValue', value);
       localStorage.setItem('saveCheckMovie', checked);
-    } else if (location.pathname === '/saved-movies') {
-      filterShort(checked);
-      setValue('');
-      setChecked(false);
     }
   }, [value, checked, location]);
 
