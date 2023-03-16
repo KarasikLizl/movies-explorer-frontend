@@ -143,6 +143,7 @@ function App() {
     localStorage.removeItem('token');
     localStorage.removeItem('movies');
     localStorage.removeItem('savedMovies');
+    localStorage.removeItem('shortMovies');
     localStorage.removeItem('filteredMovies');
     localStorage.removeItem('savedFilterMovie');
     localStorage.removeItem('saveSearchValue');
