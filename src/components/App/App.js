@@ -37,7 +37,7 @@ import {
   WIDTH_XL,
   WIDTH_L,
   WIDTH_M,
-  WIDTH_S
+  WIDTH_S,
 } from '../../utils/constants';
 
 function App() {
@@ -389,10 +389,26 @@ function App() {
           handleOpenMenu={handleOpenMenuClick}
         ></Header>
         <Routes>
-          <Route path='signup' element={<Register onSignUp={onSignUp} />} />
-          <Route path='signin' element={<Login onSignIn={onSignIn} />} />
           <Route path='/' element={<Main />} />
           <Route path='*' element={<NotFound />} />
+
+          <Route
+            path='/signup'
+            element={
+              <ProtectedRoute loggedIn={!loggedIn}>
+                <Register onSignUp={onSignUp} />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path='/signin'
+            element={
+              <ProtectedRoute loggedIn={!loggedIn}>
+                <Login onSignIn={onSignIn} />
+              </ProtectedRoute>
+            }
+          />
 
           <Route
             path='/profile'
