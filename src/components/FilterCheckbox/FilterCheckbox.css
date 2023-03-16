@@ -37,7 +37,7 @@
 .checkbox__button::after {
   content: '';
   position: absolute;
-  left: 2px;
+  right: 2px;
   top: 2px;
   width: 10px;
   height: 10px;
@@ -48,7 +48,7 @@
 }
 
 .checkbox__button:checked::after {
-  transform: translateX(calc(100% + 10px));
+  transform: translateX(-20px);
 }
 .checkbox__button:checked {
   background-color: rgb(43, 224, 128);
