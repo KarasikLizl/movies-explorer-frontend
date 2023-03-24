@@ -49,10 +49,18 @@
   padding: 20px;
 }
 
+.preloader_hidden {
+  display: none;
+}
+
 .preloader__container {
   width: 100px;
   height: 100px;
   position: relative;
+  margin: 0 auto;
+  position: absolute;
+  left: 45%;
+  top: 30%
 }
 
 .preloader__round {

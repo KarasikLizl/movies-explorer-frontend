@@ -38,6 +38,7 @@
   margin-top: 6px;
   position: absolute;
   margin-bottom: 0;
+  display: block;
 }
 
 .main-form__input {
@@ -95,6 +96,11 @@
 
 .main-form__btn:hover {
   opacity: 0.8;
+}
+
+.main-form__btn_disabled {
+  cursor: none;
+  opacity: .8;
 }
 
 .bottom-links {
